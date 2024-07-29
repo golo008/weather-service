@@ -9,6 +9,8 @@ public class WeatherController {
 
     private final WeatherRepository weatherRepository;
 
+    private static final String PASSWORD = "myPassword"
+
     public WeatherController(WeatherRepository weatherRepository) {
         this.weatherRepository = weatherRepository;
     }
@@ -17,4 +19,6 @@ public class WeatherController {
     public @ResponseBody Weather getWeatherForCity(@RequestParam("name") String cityName) {
         return weatherRepository.findById(cityName).get();
     }
+
+    
 }
